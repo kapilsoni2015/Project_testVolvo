@@ -9,8 +9,10 @@ from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 class VolvoCarSearch(unittest.TestCase):
 
     def setUp(self):
-        caps = {'browserName': os.getenv('BROWSER', 'chrome')}
-        self.driver = webdriver.Remote(command_executor='http://localhost:4444/wd/hub',desired_capabilities=caps)
+        #caps = {'browserName': os.getenv('BROWSER', 'chrome')}
+        #self.driver = webdriver.Remote(command_executor='http://localhost:4444/wd/hub',desired_capabilities=caps)
+        self.driver = webdriver.Remote(command_executor='http://127.0.0.1:4444/wd/hub',
+                desired_capabilities=DesiredCapabilities.CHROME)
         
     def test_open_volveweb(self):
         driver = self.driver
